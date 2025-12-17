@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CV | Bùi Quang Đạo - Backend Developer</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        // Tailwind dark mode = class
+        tailwind.config = { darkMode: 'class' }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-40%);
+                opacity: .0;
+            }
+
+            30% {
+                opacity: .35;
+            }
+
+            100% {
+                transform: translateX(120%);
+                opacity: 0;
+            }
+        }
+
+        .shimmer::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(110, 231, 255, .18), transparent);
+            transform: translateX(-40%);
+            animation: shimmer 3.6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .reveal,
+            .reveal.show {
+                transition: none;
+                transform: none;
+                opacity: 1;
+            }
+
+            .shimmer::after {
+                animation: none;
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <div class="mx-auto max-w-5xl px-4 py-10">
+
+        <!-- Top controls -->
+        <div class="sticky top-3 z-50 mb-6 flex items-center justify-between gap-3">
+            <a href="#top" class="text-sm font-semibold tracking-tight opacity-90 hover:opacity-100">
+                CV
+            </a>
+
+            <div class="flex items-center gap-2">
+                <!-- Language -->
+                <div class="rounded-xl border border-slate-200 bg-white/70 px-1 py-1 shadow-sm backdrop-blur
+                    dark:border-slate-800 dark:bg-slate-900/50">
+                    <button id="btnVi" class="px-3 py-1.5 text-sm rounded-lg font-medium opacity-90 hover:opacity-100">
+                        VI
+                    </button>
+                    <button id="btnEn" class="px-3 py-1.5 text-sm rounded-lg font-medium opacity-90 hover:opacity-100">
+                        EN
+                    </button>
+                </div>
+
+                <!-- Theme -->
+                <button id="btnTheme" class="rounded-xl border border-slate-200 bg-white/70 px-3 py-2 text-sm shadow-sm backdrop-blur
+                 hover:-translate-y-0.5 transition
+                 dark:border-slate-800 dark:bg-slate-900/50">
+                    <span data-i18n="theme">Sáng/Tối</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header id="top" class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white/70 p-6 md:p-8 shimmer reveal
+                           dark:border-slate-800 dark:bg-slate-900/40">
+            <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                <div class="flex items-start gap-5">
+                    <img src="./assets/me.jpg" alt="Ảnh Bùi Quang Đạo" class="h-20 w-20 rounded-2xl border border-slate-200 object-cover shadow-sm
+                   dark:border-slate-800" />
+
+                    <div>
+                        <h1 class="text-3xl font-semibold tracking-tight">Bùi Quang Đạo</h1>
+                        <p class="mt-1 text-slate-600 dark:text-slate-300">Backend Developer</p>
+
+                        <div class="mt-4 grid gap-2 text-sm text-slate-700 sm:grid-cols-2 dark:text-slate-300">
+                            <p><span class="text-slate-500 dark:text-slate-400" data-i18n="phone">Phone</span>:
+                                <a class="underline hover:text-black dark:hover:text-white"
+                                    href="tel:0395301741">0395301741</a>
+                            </p>
+                            <p><span class="text-slate-500 dark:text-slate-400">Email</span>:
+                                <a class="underline hover:text-black dark:hover:text-white"
+                                    href="mailto:daobqit@gmail.com">daobqit@gmail.com</a>
+                            </p>
+                            <p><span class="text-slate-500 dark:text-slate-400" data-i18n="address">Address</span>: Ha
+                                Noi</p>
+                            <p><span class="text-slate-500 dark:text-slate-400">GitHub</span>:
+                                <a class="underline hover:text-black dark:hover:text-white"
+                                    href="https://github.com/QD22082003" target="_blank" rel="noreferrer">QD22082003</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-white/60 p-4 text-sm text-slate-700 md:w-[320px]
+                    dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-300">
+                    <p class="font-medium text-slate-900 dark:text-slate-200" data-i18n="profile">Profile</p>
+                    <p class="mt-2 leading-relaxed" data-i18n="profile_desc">
+                        Over 3 months hands-on Backend Developer experience and more than 1 year overall professional
+                        experience.
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- About -->
+        <section class="mt-8 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-200 bg-white/70 p-6 reveal transition hover:-translate-y-1 hover:shadow-lg
+                  dark:border-slate-800 dark:bg-slate-900/40 dark:hover:shadow-cyan-500/10">
+                <h2 class="text-lg font-semibold" data-i18n="about">About me</h2>
+                <p class="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="about_desc">
+                    With over three months of hands-on experience as a Backend Developer and more than one year of
+                    overall professional experience,
+                    I have contributed to software development projects and gained valuable practical knowledge in
+                    real-world environments.
+                </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white/70 p-6 reveal transition hover:-translate-y-1 hover:shadow-lg
+                  dark:border-slate-800 dark:bg-slate-900/40 dark:hover:shadow-cyan-500/10">
+                <h2 class="text-lg font-semibold" data-i18n="objectives">Career objectives</h2>
+                <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700 dark:text-slate-300">
+                    <li data-i18n="obj_short"><span
+                            class="font-medium text-slate-900 dark:text-slate-200">Short-term:</span> Adapt quickly,
+                        build good relationships, learn and improve qualifications.</li>
+                    <li data-i18n="obj_long"><span
+                            class="font-medium text-slate-900 dark:text-slate-200">Long-term:</span> Apply knowledge and
+                        skills to contribute to the company’s overall development.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education + Skills -->
+        <section class="mt-8 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-200 bg-white/70 p-6 reveal transition hover:-translate-y-1 hover:shadow-lg
+                  dark:border-slate-800 dark:bg-slate-900/40 dark:hover:shadow-cyan-500/10">
+                <h2 class="text-lg font-semibold" data-i18n="education">Education</h2>
+                <div class="mt-3 text-sm text-slate-700 dark:text-slate-300">
+                    <p class="font-medium text-slate-900 dark:text-slate-200">Thuyloi University</p>
+                    <p data-i18n="edu_line">2021 – 2025 · Major: Information Technology</p>
+                    <p>GPA: 3.29/4.0</p>
+                </div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white/70 p-6 reveal transition hover:-translate-y-1 hover:shadow-lg
+                  dark:border-slate-800 dark:bg-slate-900/40 dark:hover:shadow-cyan-500/10">
+                <h2 class="text-lg font-semibold" data-i18n="skills">Skills</h2>
+                <div class="mt-3 space-y-3 text-sm text-slate-700 dark:text-slate-300">
+                    <div>
+                        <p class="font-medium text-slate-900 dark:text-slate-200" data-i18n="skills_tech">Technical</p>
+                        <p class="mt-1">
+                            Java, JavaScript · Spring Boot, Express.js, ReactJS · SQL Server, PostgreSQL, MySQL ·
+                            RESTful APIs, OOP, async/await ·
+                            Redux, WebRTC, WebSocket, FCM · Git, Postman, Figma
+                        </p>
+                    </div>
+                    <div>
+                        <p class="font-medium text-slate-900 dark:text-slate-200" data-i18n="skills_other">Others</p>
+                        <p class="mt-1" data-i18n="skills_other_desc">
+                            Presentation & teamwork · Read/understand English docs · System analysis & service modeling
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="mt-8 rounded-2xl border border-slate-200 bg-white/70 p-6 reveal
+                    dark:border-slate-800 dark:bg-slate-900/40">
+            <h2 class="text-lg font-semibold" data-i18n="experience">Professional experience</h2>
+
+            <!-- VietnamPost -->
+            <div class="mt-5 rounded-xl border border-slate-200 bg-white/60 p-5 transition hover:-translate-y-1 hover:shadow-lg
+                  dark:border-slate-800 dark:bg-slate-950/40 dark:hover:shadow-cyan-500/10">
+                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <div class="flex items-center gap-3">
+                        <img src="./assets/Vietnam_Post_logo.png" alt="Vietnam Post"
+                            class="h-9 w-9 rounded-lg bg-white p-1 object-contain" />
+                        <p class="font-semibold">VietnamPost</p>
+                    </div>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">08/2025 – 12/2025 · Java Backend Dev</p>
+                </div>
+
+                <p class="mt-3 text-sm font-medium text-slate-900 dark:text-slate-200" data-i18n="vnpost_projects">
+                    Projects: Campaign Service & PHBC (2025 - On-going)
+                </p>
+                <p class="mt-2 text-sm text-slate-700 dark:text-slate-300" data-i18n="vnpost_desc">
+                    Digital platform to centralize and manage internal cultural campaigns; software for central press
+                    distribution companies.
+                </p>
+
+                <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700 dark:text-slate-300">
+                    <li data-i18n="vnpost_1">Developed user APIs for campaign participation (view, submit actions, track
+                        rankings).</li>
+                    <li data-i18n="vnpost_2">Built survey management APIs (join, submit, review surveys).</li>
+                    <li data-i18n="vnpost_3">Implemented HRM APIs for org units/positions with hierarchical structure.
+                    </li>
+                    <li data-i18n="vnpost_4">Created article management APIs (CRUD, publish).</li>
+                    <li data-i18n="vnpost_5">API to track delivery status and calculate shipping fees on warehouse
+                        dispatch (PHBC).</li>
+                    <li data-i18n="vnpost_6">Feature to update supplier priority ranking for assigned products.</li>
+                </ul>
+
+                <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">Tech: Java Spring Boot</p>
+            </div>
+
+            <!-- DTS / JITS -->
+            <div class="mt-4 rounded-xl border border-slate-200 bg-white/60 p-5 transition hover:-translate-y-1 hover:shadow-lg
+                  dark:border-slate-800 dark:bg-slate-950/40 dark:hover:shadow-cyan-500/10">
+                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <div class="flex items-center gap-3">
+                        <img src="./assets/dts.jpg" alt="DTS / JITS"
+                            class="h-9 w-9 rounded-lg bg-white p-1 object-contain" />
+                        <p class="font-semibold">Digital Technology Solutions (Just-In-Time Solutions)</p>
+                    </div>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">07/2024 – 06/2025 · Developer (R&amp;D)</p>
+                </div>
+
+                <div class="mt-3">
+                    <p class="text-sm font-medium text-slate-900 dark:text-slate-200" data-i18n="aritalk_title">
+                        Project: AriTalk - Digital Assistant (2024 - On-going)
+                    </p>
+                    <p class="mt-2 text-sm text-slate-700 dark:text-slate-300" data-i18n="aritalk_desc">
+                        AI-powered chatbot that interacts with users, answers questions, and performs tasks based on
+                        predefined goals.
+                    </p>
+                    <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700 dark:text-slate-300">
+                        <li data-i18n="aritalk_1">Developed chatbot widget functionality and admin interfaces.</li>
+                        <li data-i18n="aritalk_2">Built real-time chat between users and admin via WebSocket and hub
+                            model.</li>
+                        <li data-i18n="aritalk_3">Implemented video calling, screen sharing, chat history APIs and
+                            statistical reporting tools.</li>
+                    </ul>
+                    <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">Tech: ReactJS, Tailwind, Redux, WebRTC ·
+                        Java, MongoDB</p>
+                </div>
+
+                <div class="mt-5">
+                    <p class="text-sm font-medium text-slate-900 dark:text-slate-200" data-i18n="banking_title">
+                        Project: Digital Banking, Digital Lending (2024 - Present)
+                    </p>
+                    <p class="mt-2 text-sm text-slate-700 dark:text-slate-300" data-i18n="banking_desc">
+                        Client: SHWE Bank (Myanmar) — Partner portal/app to manage partners cooperating with the bank.
+                    </p>
+                    <ul class="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700 dark:text-slate-300">
+                        <li data-i18n="banking_1">Back Office UI for Partner Management, limits, fees, scoring,
+                            holiday/config parameters.</li>
+                        <li data-i18n="banking_2">Partner App/Portal UI + APIs for limits and fees.</li>
+                        <li data-i18n="banking_3">CMS UI + APIs for text translation and error messages.</li>
+                    </ul>
+                    <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">Tech: Java, SQL Server · ReactJS, HTML,
+                        CSS, JS</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Graduation project -->
+        <section class="mt-8 rounded-2xl border border-slate-200 bg-white/70 p-6 reveal transition hover:-translate-y-1 hover:shadow-lg
+                    dark:border-slate-800 dark:bg-slate-900/40 dark:hover:shadow-cyan-500/10">
+            <h2 class="text-lg font-semibold" data-i18n="grad">Graduation project</h2>
+            <p class="mt-3 text-sm font-medium text-slate-900 dark:text-slate-200" data-i18n="grad_title">
+                Developing IPLAW360 software (management system for an intellectual property law firm)
+            </p>
+            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300" data-i18n="grad_desc">
+                Management of clients, case files, trademark applications, personnel… First client: IPAC law firm.
+            </p>
+
+            <div class="mt-3 flex flex-wrap gap-3 text-sm">
+                <a class="underline hover:text-black dark:hover:text-white"
+                    href="https://github.com/QD22082003/QLCV-DATN-backend" target="_blank" rel="noreferrer"
+                    data-i18n="grad_backend">
+                    Backend repo
+                </a>
+                <a class="underline hover:text-black dark:hover:text-white"
+                    href="https://github.com/QD22082003/QLCV-DATN-Frontend" target="_blank" rel="noreferrer"
+                    data-i18n="grad_frontend">
+                    Frontend repo
+                </a>
+            </div>
+
+            <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-700 dark:text-slate-300">
+                <li data-i18n="grad_1">Studied business processes and designed system architecture + DB schema.</li>
+                <li data-i18n="grad_2">Built modules for case files, applications, clients, partners, countries,
+                    case/application types, products/services, personnel.</li>
+                <li data-i18n="grad_3">Implemented advanced filters for searching/reporting.</li>
+                <li data-i18n="grad_4">Integrated notifications via Firebase Cloud Messaging (FCM).</li>
+                <li data-i18n="grad_5">Authentication, account creation, role-based access control.</li>
+            </ul>
+
+            <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">Tech: NodeJS (Express.js), Sequelize · MySQL ·
+                Firebase</p>
+        </section>
+
+        <footer class="mt-10 text-center text-xs text-slate-500 reveal">
+            © <span id="y"></span> Bùi Quang Đạo 
+        </footer>
+    </div>
+
+    <script>
+        // Year
+        document.getElementById("y").textContent = new Date().getFullYear();
+
+        // Scroll reveal animations
+        const els = document.querySelectorAll(".reveal");
+        const io = new IntersectionObserver((entries) => {
+            for (const e of entries) {
+                if (e.isIntersecting) {
+                    e.target.classList.add("show");
+                    io.unobserve(e.target);
+                }
+            }
+        }, { threshold: 0.12 });
+        els.forEach(el => io.observe(el));
+
+        // -----------------------
+        // THEME (light/dark)
+        // -----------------------
+        const root = document.documentElement;
+        const btnTheme = document.getElementById("btnTheme");
+
+        function setTheme(mode) {
+            if (mode === "dark") root.classList.add("dark");
+            else root.classList.remove("dark");
+            localStorage.setItem("theme", mode);
+        }
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) setTheme(savedTheme);
+        else {
+            // default by system preference
+            const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+            setTheme(prefersDark ? "dark" : "light");
+        }
+
+        btnTheme.addEventListener("click", () => {
+            const isDark = root.classList.contains("dark");
+            setTheme(isDark ? "light" : "dark");
+        });
+
+        // -----------------------
+        // I18N (VI / EN)
+        // -----------------------
+        const dict = {
+            vi: {
+                theme: "Sáng/Tối",
+                phone: "SĐT",
+                address: "Địa chỉ",
+                profile: "Giới thiệu",
+                profile_desc: "Hơn 6 tháng kinh nghiệm thực chiến Backend Developer và hơn 1 năm kinh nghiệm làm việc tổng thể.",
+                about: "Về tôi",
+                about_desc: "Với hơn sáu tháng kinh nghiệm thực chiến Backend Developer và hơn một năm kinh nghiệm làm việc tổng thể, tôi đã tham gia các dự án phát triển phần mềm và tích lũy kiến thức thực tế trong môi trường doanh nghiệp.",
+                objectives: "Mục tiêu nghề nghiệp",
+                obj_short: "<span class='font-medium text-slate-900 dark:text-slate-200'>Ngắn hạn:</span> Thích nghi nhanh, xây dựng mối quan hệ tốt, học hỏi và nâng cao trình độ.",
+                obj_long: "<span class='font-medium text-slate-900 dark:text-slate-200'>Dài hạn:</span> Vận dụng kiến thức/kỹ năng để đóng góp cho sự phát triển chung của công ty.",
+                education: "Học vấn",
+                edu_line: "2021 – 2025 · Chuyên ngành: Công nghệ thông tin",
+                skills: "Kỹ năng",
+                skills_tech: "Kỹ thuật",
+                skills_other: "Khác",
+                skills_other_desc: "Thuyết trình & làm việc nhóm · Đọc hiểu tài liệu tiếng Anh · Phân tích hệ thống & mô hình dịch vụ",
+                experience: "Kinh nghiệm làm việc",
+                vnpost_projects: "Dự án: Campaign Service & PHBC (2025 - Hiện tại)",
+                vnpost_desc: "Nền tảng số quản lý các chiến dịch văn hoá nội bộ; phần mềm cho các đơn vị phát hành báo chí trung ương.",
+                vnpost_1: "Phát triển API người dùng tham gia chiến dịch (xem, gửi hành động, theo dõi xếp hạng).",
+                vnpost_2: "Xây dựng API quản lý khảo sát (tham gia, gửi, xem khảo sát).",
+                vnpost_3: "Triển khai API HRM cho đơn vị/chức danh theo cấu trúc phân cấp.",
+                vnpost_4: "Tạo API quản lý bài viết (CRUD, xuất bản).",
+                vnpost_5: "API theo dõi trạng thái giao hàng và tính phí vận chuyển khi xuất kho (PHBC).",
+                vnpost_6: "Tính năng cập nhật thứ tự ưu tiên nhà cung cấp cho sản phẩm được gán.",
+                aritalk_title: "Dự án: AriTalk - Trợ lý số (2024 - Hiện tại)",
+                aritalk_desc: "Chatbot AI tương tác với người dùng, trả lời câu hỏi và thực hiện tác vụ theo mục tiêu định sẵn.",
+                aritalk_1: "Phát triển widget chatbot và giao diện quản trị.",
+                aritalk_2: "Xây dựng chat realtime giữa user và admin qua WebSocket và mô hình hub.",
+                aritalk_3: "Triển khai gọi video, chia sẻ màn hình, API lịch sử chat và công cụ thống kê.",
+                banking_title: "Dự án: Digital Banking, Digital Lending (2024 - Hiện tại)",
+                banking_desc: "Khách hàng: SHWE Bank (Myanmar) — Cổng/app đối tác quản lý hợp tác với ngân hàng.",
+                banking_1: "UI Back Office: quản lý đối tác, hạn mức, phí, scoring, cấu hình ngày nghỉ/tham số.",
+                banking_2: "UI + API cho Partner App/Portal: hạn mức và phí.",
+                banking_3: "UI + API CMS: dịch văn bản và thông báo lỗi.",
+                grad: "Đồ án tốt nghiệp",
+                grad_title: "Phát triển phần mềm IPLAW360 (hệ thống quản lý cho công ty luật sở hữu trí tuệ)",
+                grad_desc: "Quản lý khách hàng, hồ sơ vụ việc, đơn nhãn hiệu, nhân sự… Khách hàng đầu tiên: công ty luật IPAC.",
+                grad_backend: "Repo backend",
+                grad_frontend: "Repo frontend",
+                grad_1: "Nghiên cứu nghiệp vụ và thiết kế kiến trúc hệ thống + CSDL.",
+                grad_2: "Xây dựng module hồ sơ, đơn, khách hàng, đối tác, quốc gia, loại hồ sơ/đơn, sản phẩm/dịch vụ, nhân sự.",
+                grad_3: "Triển khai bộ lọc nâng cao phục vụ tra cứu/báo cáo.",
+                grad_4: "Tích hợp thông báo qua Firebase Cloud Messaging (FCM).",
+                grad_5: "Xác thực, tạo tài khoản, phân quyền theo vai trò."
+            },
+            en: {
+                theme: "Light/Dark",
+                phone: "Phone",
+                address: "Address",
+                profile: "Profile",
+                profile_desc: "Over 6 months hands-on Backend Developer experience and more than 1 year overall professional experience.",
+                about: "About me",
+                about_desc: "With over six months of hands-on experience as a Backend Developer and more than one year of overall professional experience, I have contributed to software development projects and gained valuable practical knowledge in real-world environments.",
+                objectives: "Career objectives",
+                obj_short: "<span class='font-medium text-slate-900 dark:text-slate-200'>Short-term:</span> Adapt quickly, build good relationships, learn and improve qualifications.",
+                obj_long: "<span class='font-medium text-slate-900 dark:text-slate-200'>Long-term:</span> Apply knowledge and skills to contribute to the company’s overall development.",
+                education: "Education",
+                edu_line: "2021 – 2025 · Major: Information Technology",
+                skills: "Skills",
+                skills_tech: "Technical",
+                skills_other: "Others",
+                skills_other_desc: "Presentation & teamwork · Read/understand English docs · System analysis & service modeling",
+                experience: "Professional experience",
+                vnpost_projects: "Projects: Campaign Service & PHBC (2025 - On-going)",
+                vnpost_desc: "Digital platform to centralize and manage internal cultural campaigns; software for central press distribution companies.",
+                vnpost_1: "Developed user APIs for campaign participation (view, submit actions, track rankings).",
+                vnpost_2: "Built survey management APIs (join, submit, review surveys).",
+                vnpost_3: "Implemented HRM APIs for org units/positions with hierarchical structure.",
+                vnpost_4: "Created article management APIs (CRUD, publish).",
+                vnpost_5: "API to track delivery status and calculate shipping fees on warehouse dispatch (PHBC).",
+                vnpost_6: "Feature to update supplier priority ranking for assigned products.",
+                aritalk_title: "Project: AriTalk - Digital Assistant (2024 - On-going)",
+                aritalk_desc: "AI-powered chatbot that interacts with users, answers questions, and performs tasks based on predefined goals.",
+                aritalk_1: "Developed chatbot widget functionality and admin interfaces.",
+                aritalk_2: "Built real-time chat between users and admin via WebSocket and hub model.",
+                aritalk_3: "Implemented video calling, screen sharing, chat history APIs and statistical reporting tools.",
+                banking_title: "Project: Digital Banking, Digital Lending (2024 - Present)",
+                banking_desc: "Client: SHWE Bank (Myanmar) — Partner portal/app to manage partners cooperating with the bank.",
+                banking_1: "Back Office UI for Partner Management, limits, fees, scoring, holiday/config parameters.",
+                banking_2: "Partner App/Portal UI + APIs for limits and fees.",
+                banking_3: "CMS UI + APIs for text translation and error messages.",
+                grad: "Graduation project",
+                grad_title: "Developing IPLAW360 software (management system for an intellectual property law firm)",
+                grad_desc: "Management of clients, case files, trademark applications, personnel… First client: IPAC law firm.",
+                grad_backend: "Backend repo",
+                grad_frontend: "Frontend repo",
+                grad_1: "Studied business processes and designed system architecture + DB schema.",
+                grad_2: "Built modules for case files, applications, clients, partners, countries, case/application types, products/services, personnel.",
+                grad_3: "Implemented advanced filters for searching/reporting.",
+                grad_4: "Integrated notifications via Firebase Cloud Messaging (FCM).",
+                grad_5: "Authentication, account creation, role-based access control."
+            }
+        };
+
+        const btnVi = document.getElementById("btnVi");
+        const btnEn = document.getElementById("btnEn");
+
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem("lang", lang);
+
+            // highlight active button
+            const active = "bg-slate-900 text-white dark:bg-white dark:text-slate-900";
+            const idle = "text-slate-700 dark:text-slate-200";
+            [btnVi, btnEn].forEach(b => { b.className = b.className.replace(active, "").trim(); });
+
+            if (lang === "vi") {
+                btnVi.classList.add(...active.split(" "));
+                btnEn.classList.add(...idle.split(" "));
+            } else {
+                btnEn.classList.add(...active.split(" "));
+                btnVi.classList.add(...idle.split(" "));
+            }
+
+            // apply translations
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                const val = dict[lang][key];
+                if (val == null) return;
+
+                // allow some entries to contain inline HTML (e.g. bold label)
+                el.innerHTML = val;
+            });
+        }
+
+        btnVi.addEventListener("click", () => setLang("vi"));
+        btnEn.addEventListener("click", () => setLang("en"));
+
+        // init language
+        const savedLang = localStorage.getItem("lang") || "en";
+        setLang(savedLang);
+    </script>
+</body>
+
+</html>
