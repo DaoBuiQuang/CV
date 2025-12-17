@@ -70,6 +70,10 @@
                 display: none;
             }
         }
+
+        .skill {
+            @apply rounded-lg border border-slate-300 bg-white px-3 py-1 text-xs font-medium text-slate-800 transition hover:-translate-y-0.5 hover:shadow dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200;
+        }
     </style>
 </head>
 
@@ -184,24 +188,103 @@
                 </div>
             </div>
 
-            <div class="rounded-2xl border border-slate-200 bg-white/70 p-6 reveal transition hover:-translate-y-1 hover:shadow-lg
-                  dark:border-slate-800 dark:bg-slate-900/40 dark:hover:shadow-cyan-500/10">
+            <div class="rounded-2xl border border-slate-200 bg-white/70 p-6 reveal transition
+            hover:-translate-y-1 hover:shadow-lg
+            dark:border-slate-800 dark:bg-slate-900/40 dark:hover:shadow-cyan-500/10">
+
                 <h2 class="text-lg font-semibold" data-i18n="skills">Skills</h2>
-                <div class="mt-3 space-y-3 text-sm text-slate-700 dark:text-slate-300">
+
+                <div class="mt-4 space-y-4 text-sm text-slate-700 dark:text-slate-300">
+
+                    <!-- Languages -->
                     <div>
-                        <p class="font-medium text-slate-900 dark:text-slate-200" data-i18n="skills_tech">Technical</p>
-                        <p class="mt-1">
-                            Java, JavaScript · Spring Boot, Express.js, ReactJS · SQL Server, PostgreSQL, MySQL ·
-                            RESTful APIs, OOP, async/await ·
-                            Redux, WebRTC, WebSocket, FCM · Git, Postman, Figma
+                        <p class="font-medium text-slate-900 dark:text-slate-200 mb-2">
+                            Programming Languages
                         </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill">Java</span>
+                            <span class="skill">JavaScript</span>
+                        </div>
                     </div>
+
+                    <!-- Backend -->
                     <div>
-                        <p class="font-medium text-slate-900 dark:text-slate-200" data-i18n="skills_other">Others</p>
-                        <p class="mt-1" data-i18n="skills_other_desc">
-                            Presentation & teamwork · Read/understand English docs · System analysis & service modeling
+                        <p class="font-medium text-slate-900 dark:text-slate-200 mb-2">
+                            Backend
                         </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill">Spring Boot</span>
+                            <span class="skill">Express.js</span>
+                            <span class="skill">RESTful API</span>
+                            <span class="skill">OOP</span>
+                            <span class="skill">Async/Await</span>
+                        </div>
                     </div>
+
+                    <!-- Frontend -->
+                    <div>
+                        <p class="font-medium text-slate-900 dark:text-slate-200 mb-2">
+                            Frontend
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill">ReactJS</span>
+                            <span class="skill">Redux</span>
+                            <span class="skill">Tailwind CSS</span>
+                            <span class="skill">HTML</span>
+                            <span class="skill">CSS</span>
+                        </div>
+                    </div>
+
+                    <!-- Database -->
+                    <div>
+                        <p class="font-medium text-slate-900 dark:text-slate-200 mb-2">
+                            Database
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill">SQL Server</span>
+                            <span class="skill">PostgreSQL</span>
+                            <span class="skill">MySQL</span>
+                            <span class="skill">MongoDB</span>
+                        </div>
+                    </div>
+
+                    <!-- Realtime & Services -->
+                    <div>
+                        <p class="font-medium text-slate-900 dark:text-slate-200 mb-2">
+                            Realtime / Services
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill">WebSocket</span>
+                            <span class="skill">WebRTC</span>
+                            <span class="skill">Firebase Cloud Messaging</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div>
+                        <p class="font-medium text-slate-900 dark:text-slate-200 mb-2">
+                            Tools
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill">Git</span>
+                            <span class="skill">Postman</span>
+                            <span class="skill">Figma</span>
+                        </div>
+                    </div>
+
+                    <!-- Soft skills -->
+                    <div>
+                        <p class="font-medium text-slate-900 dark:text-slate-200 mb-2">
+                            Others
+                        </p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li data-i18n="skills_other_desc">
+                                Presentation & teamwork · Read/understand English docs · System analysis & service
+                                modeling
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -334,7 +417,7 @@
         </section>
 
         <footer class="mt-10 text-center text-xs text-slate-500 reveal">
-            © <span id="y"></span> Bùi Quang Đạo 
+            © <span id="y"></span> Bùi Quang Đạo
         </footer>
     </div>
 
